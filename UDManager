@@ -1,0 +1,28 @@
+//  Created by Jaz King on 20/01/2019.
+//  Copyright © 2018 Jaz King. All rights reserved.
+//
+
+import Foundation
+
+class UDManager {
+        
+    private let defaults = UserDefaults(suiteName: "group.com.Company.Name")!
+
+    func addToUserDefaults(string: String) {
+                       
+         defaults.set(string, forKey: "TodayWidget")
+                
+         defaults.synchronize()
+               
+    }
+    
+    func loadFromUserDefaults(string: String) {
+        
+        if let data = defaults.object(forKey: "TodayWidget") {
+                        
+            projectTitles = (data as! String)
+            
+        }
+    }  
+    
+}
